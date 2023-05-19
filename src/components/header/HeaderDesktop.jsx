@@ -23,7 +23,7 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
         <ul className="flex gap-6  items-center justify-center">
           <AdminOnlyRoute>
             <li>
-              <Link to="admin">Admin</Link>
+              <Link to="admin/home">Admin</Link>
             </li>
           </AdminOnlyRoute>
 

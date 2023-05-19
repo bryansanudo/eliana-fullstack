@@ -1,25 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
 
 const Navbar = () => {
   return (
     <>
-      <div>
-        <ul>
-          <li>
-            <Link to="home">Home</Link>
-          </li>
-          <li>
-            <Link to="all-products">todos los productos</Link>
-          </li>
-          <li>
-            <Link to="add-product">agregar producto</Link>
-          </li>
-          <li>
-            <Link to="orders">pedidos</Link>
-          </li>
-        </ul>
-      </div>
+      <ul className="menu bg-base-100  p-2 rounded-box  ">
+        <li>
+          <Link to="home">
+            <FaFacebook />
+            Inicio
+          </Link>
+        </li>
+        <li>
+          <Link to="all-products">
+            <FaFacebook />
+            Productos
+          </Link>
+        </li>
+        <li>
+          <Link to="add-product">
+            <FaFacebook />
+            Agregar
+          </Link>
+        </li>
+        <li>
+          <Link to="orders">
+            <FaFacebook />
+            Pedidos
+          </Link>
+        </li>
+      </ul>
     </>
   );
 };
