@@ -5,28 +5,28 @@ import { FaFacebook } from "react-icons/fa";
 const Navbar = () => {
   return (
     <>
-      <ul className="menu bg-base-100  p-2 rounded-box  ">
+      <ul className="menu bg-gray-300 h-full  ">
         <li>
           <Link to="home">
-            <FaFacebook />
+            <FaFacebook className="text-4xl text-primary"/>
             Inicio
           </Link>
         </li>
         <li>
           <Link to="all-products">
-            <FaFacebook />
+            <FaFacebook className="text-4xl text-primary"/>
             Productos
           </Link>
         </li>
         <li>
           <Link to="add-product">
-            <FaFacebook />
+            <FaFacebook className="text-4xl text-primary"/>
             Agregar
           </Link>
         </li>
         <li>
           <Link to="orders">
-            <FaFacebook />
+            <FaFacebook className="text-4xl text-primary"/>
             Pedidos
           </Link>
         </li>

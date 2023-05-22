@@ -6,6 +6,7 @@ import { auth } from "@/configFirebase";
 import { toast } from "react-toastify";
 import { ShowOnLogin, ShowOnLogout } from "@/components/HiddenLink";
 import AdminOnlyRoute from "@/components/AdminOnlyRoute";
+import { AdminOnlyLink } from "@/components/AdminOnlyRoute";
 
 const HeaderDesktop = ({ activeLink, displayName }) => {
   const logout = () => {
@@ -21,11 +22,11 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
     <>
       <div className="hidden md:flex justify-between mx- gap-8">
         <ul className="flex gap-6  items-center justify-center">
-          <AdminOnlyRoute>
+          <AdminOnlyLink>
             <li>
               <Link to="admin/home">Admin</Link>
             </li>
-          </AdminOnlyRoute>
+          </AdminOnlyLink>
 
           <li className="hover:text-primary hover:scale-105 duration-400">
             <NavLink className={activeLink} to="/">
