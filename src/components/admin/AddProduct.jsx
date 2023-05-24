@@ -3,8 +3,13 @@ import Section from "@/components/common/Section";
 import { AiFillFileAdd } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import { storage, db } from "@/configFirebase";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { Timestamp, addDoc, collection } from "firebase/firestore";
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import { Timestamp, addDoc, collection, doc, setDoc } from "firebase/firestore";
 import Loader from "@/components/Loader";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
@@ -122,7 +127,25 @@ const AddProduct = () => {
     e.preventDefault;
     setIsLoading(true);
 
+    if (product.imageURL !== productEdit.imageURL) {
+      const storageRef = ref(storage, productEdit.imageURL);
+      deleteObject(storageRef);
+    }
+
     try {
+      setDoc(doc(db, "products", id), {
+        name: product.name,
+        imageURL: product.imageURL,
+        price: Number(product.price),
+        category: product.category,
+        brand: product.brand,
+        desc: product.desc,
+        createdAt: productEdit.createdAt,
+        editedAt: Timestamp.now().toDate(),
+      });
+      setIsLoading(false);
+      toast.success("Product edited successfully");
+      navigate("/admin/all-products");
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message);
