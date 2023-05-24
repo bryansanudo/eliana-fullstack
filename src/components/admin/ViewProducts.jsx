@@ -122,7 +122,7 @@ const ViewProducts = () => {
                   <td className="text-center">{`$${price}`}</td>
                   <td>
                     <div className="flex items-center justify-center gap-4">
-                      <Link to="/admin/add-product">
+                      <Link to={`/admin/add-product/${id}`}>
                         <FaEdit className="text-2xl text-green-500" />
                       </Link>
                       <FaTrashAlt

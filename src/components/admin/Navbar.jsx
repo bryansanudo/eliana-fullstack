@@ -19,7 +19,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="add-product">
+          <Link to="/admin/add-product/ADD">
             <FaFacebook className="text-4xl text-primary" />
             Agregar
           </Link>
