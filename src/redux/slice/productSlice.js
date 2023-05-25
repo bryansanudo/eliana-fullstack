@@ -9,7 +9,7 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     STORE_PRODUCTS(state, action) {
-      console.log(action.payload.products);
+      //console.log(action.payload.products);
       state.products = action.payload.products;
     },
   },
