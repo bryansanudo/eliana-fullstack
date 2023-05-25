@@ -13,13 +13,9 @@ const Home = () => {
       >
         <Slider />
       </Section>
-      <Section
-        name="seccion 2"
-        title="seccion 2"
-        subtitle=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat molestiae dolore dolor nam aliquam cumque repellendus necessitatibus maiores minima repellat quam reiciendis facere voluptates sed beatae, et omnis consectetur deserunt."
-      >
-        <Product />
-      </Section>
+
+      <Product />
+
       <Section
         name="seccion 3"
         title="seccion 3"
