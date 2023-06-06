@@ -11,8 +11,8 @@ const ProductList = ({ products }) => {
   return (
     <>
       <div id="product">
-        <div className="border-b-4  flex justify-between items-center">
-          <div className="flex items-center  justify-center">
+        <div className="border-b-4  flex justify-between items-center mb-5 flex-col md:flex-row">
+          <div className="hidden md:flex items-center  justify-center ">
             <BsFillGridFill
               className="text-red-400 cursor-pointer text-2xl mr-2"
               onClick={() => setGrid(true)}
@@ -26,38 +26,49 @@ const ProductList = ({ products }) => {
 
           {/* search icon */}
 
-          <div>
-            <Search
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
+          <div className="flex gap-2">
+            <div>
+              <Search
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
 
-          {/* sort products */}
+            {/* sort products */}
 
-          <div className="sort">
-            <select
-              defaultValue="Sort By"
-              className="select select-primary w-full max-w-xs"
-            >
-              <option disabled>Sort By</option>
-              <option value="latest">Latest</option>
-              <option value="lowest-price">Lowest Price</option>
-              <option value="highest-price">Highest Price</option>
-              <option value="a-z">A-Z</option>
-              <option value="z-a>">Z-A</option>
-            </select>
+            <div className="sort">
+              <select
+                defaultValue="Sort By"
+                className="select select-primary w-full max-w-xs"
+              >
+                <option disabled>Sort By</option>
+                <option value="latest">Latest</option>
+                <option value="lowest-price">Lowest Price</option>
+                <option value="highest-price">Highest Price</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a>">Z-A</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <div className={grid ? "grid grid-cols-3" : "flex flex-col "}>
+        <div
+          className={
+            grid
+              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+              : "flex flex-col "
+          }
+        >
           {products.lenght === 0 ? (
             <p>No products found</p>
           ) : (
             <>
               {products.map((product) => {
                 return (
-                  <div key={product.id}>
+                  <div
+                    key={product.id}
+                    className="shadow-lg shadow-gray-500 rounded-xl p-4 flex flex-col justify-between items-center gap-4 "
+                  >
                     <ProductItem {...product} grid={grid} product={product} />
                   </div>
                 );
