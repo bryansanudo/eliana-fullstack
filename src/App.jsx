@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminOnlyRoute from "@/components/AdminOnlyRoute";
 import Admin from "@/pages/Admin";
+import ProductDetails from "@/components/product/ProductDetails";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
               </AdminOnlyRoute>
             }
           />
+          <Route path="/product-details/:id" element={<ProductDetails />} />
         </Routes>
       </BrowserRouter>
     </>
