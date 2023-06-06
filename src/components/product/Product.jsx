@@ -24,7 +24,7 @@ const Product = () => {
         <div className=" bg-red-500 cols-span-1 ">
           <ProductFilter />
         </div>
-        <div className="col-span-4 bg-blue-500 w-full ">
+        <div className="col-span-4  w-full ">
           <ProductList products={products} />
         </div>
       </div>
