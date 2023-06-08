@@ -11,7 +11,7 @@ const ProductItem = ({ product, grid, id, name, price, desc, imageURL }) => {
     <div className={grid ? "" : "flex justify-between gap-6"}>
       <Link to={`/product-details/${id}`}>
         <img
-          className="object-contain h-[250px] w-[250px]"
+          className="object-contain h-[200px] w-[200px]"
           src={imageURL}
           alt={name}
         />
