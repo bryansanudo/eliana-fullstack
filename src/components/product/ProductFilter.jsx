@@ -4,32 +4,31 @@ import { FaFacebook } from "react-icons/fa";
 const ProductFilter = () => {
   return (
     <>
-      <ul className="menu bg-gray-300 h-full  ">
-        <li>
-          <Link to="home">
-            <FaFacebook className="text-4xl text-primary" />
-            Inicio
-          </Link>
-        </li>
-        <li>
-          <Link to="all-products">
-            <FaFacebook className="text-4xl text-primary" />
-            Productos
-          </Link>
-        </li>
-        <li>
-          <Link to="/admin/add-product/ADD">
-            <FaFacebook className="text-4xl text-primary" />
-            Agregar
-          </Link>
-        </li>
-        <li>
-          <Link to="orders">
-            <FaFacebook className="text-4xl text-primary" />
-            Pedidos
-          </Link>
-        </li>
-      </ul>
+      <h2 className="font-bold text-4xl py-8  text-transparent bg-clip-text  bg-gradient-to-r from-[#e67c04] to-[#5C24B3] w-min md:text-5xl capitalize">
+        Categorias
+      </h2>
+      <div>
+        <button>All</button>
+      </div>
+      <h4>Brand</h4>
+      <div>
+        <select name="brand" className="select select-bordered  select-sm">
+          <option value="all">All</option>
+          <option value="phone">Phone</option>
+        </select>
+        <h4>Price</h4>
+        <p className="font-bold text-primary text-2xl">$1500</p>
+        <div>
+          <input
+            type="range"
+            className="range range-primary range-xs"
+            name="price"
+            min="100"
+            max="1000"
+          />
+        </div>
+        <button className="btn btn-primary">Clear Filter</button>
+      </div>
     </>
   );
 };

@@ -23,7 +23,7 @@ const Product = () => {
   return (
     <>
       <div className="pt-24 md:pt-0 md:grid md:grid-cols-5 h-screen md:mx-20 mx-6">
-        <div className=" bg-red-500 cols-span-1">
+        <div className="  cols-span-1">
           {isLoading ? null : <ProductFilter />}
         </div>
 
