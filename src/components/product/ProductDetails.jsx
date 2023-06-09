@@ -36,7 +36,7 @@ const ProductDetails = () => {
         <>
           <Section title={product.name}>
             <div className="w-full text-left pl-12 md:pl-24 mb-6">
-              <Link to="#/products">&larr; Back To Products</Link>
+              <Link to="/#products">&larr; Back To Products</Link>
             </div>
             <div className="flex md:flex-row flex-col gap-4 md:mx-20 mx-4  max-h-[500px]">
               <img
