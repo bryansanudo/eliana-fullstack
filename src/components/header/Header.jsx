@@ -49,9 +49,11 @@ const Header = () => {
         <div className="w-full h-24 max-w-[1200px] mx-auto p-4 flex justify-between items-center ">
           <div className="text-white w-[20%] text-lg">
             <Link to="/">
-              <h2>
-                MyMoney<span className="text-primary">App</span>
-              </h2>
+              <img
+                src="/logo.png"
+                alt=""
+                className="rounded-full object-cover hover:scale-105 transition-300  md:h-20 md:w-20 h-16 w-16  duration-300 shadow-lg   shadow-[#ffcdc2]"
+              />
             </Link>
           </div>
 

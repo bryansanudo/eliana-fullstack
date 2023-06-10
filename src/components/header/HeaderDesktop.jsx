@@ -34,8 +34,8 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
             </NavLink>
           </li>
           <li className="hover:text-primary hover:scale-105 duration-400">
-            <NavLink className={activeLink} to="/contact">
-              Contacto
+            <NavLink className={activeLink} to="/faq">
+              FAQ
             </NavLink>
           </li>
           <li className="hover:text-primary hover:scale-105 duration-400">

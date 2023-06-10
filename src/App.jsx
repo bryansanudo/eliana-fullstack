@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminOnlyRoute from "@/components/AdminOnlyRoute";
 import Admin from "@/pages/Admin";
 import ProductDetails from "@/components/product/ProductDetails";
+import Faq from "@/components/Faq";
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<Faq />} />
 
           <Route
             path="/admin/*"

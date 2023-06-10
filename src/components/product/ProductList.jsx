@@ -38,7 +38,7 @@ const ProductList = ({ products }) => {
 
           {/* search icon */}
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 mb-4">
             <div>
               <Search
                 value={search}
