@@ -6,15 +6,21 @@ import ProductItem from "@/components/product/ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import {
   FILTER_BY_SEARCH,
+  SORT_PRODUCTS,
   selectFilteredProducts,
 } from "@/redux/slice/filterSlice";
 
 const ProductList = ({ products }) => {
   const [grid, setGrid] = useState(true);
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("latest");
 
   const filteredProducts = useSelector(selectFilteredProducts);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(SORT_PRODUCTS({ products, sort }));
+  }, [dispatch, sort, products]);
 
   useEffect(() => {
     dispatch(FILTER_BY_SEARCH({ products, search }));
@@ -33,11 +39,11 @@ const ProductList = ({ products }) => {
               className="text-[#0066d4] cursor-pointer text-2xl mr-2"
               onClick={() => setGrid(false)}
             />
-            <p>10</p> products found
+            <p>
+              <b>{filteredProducts.length}</b> products found
+            </p>
           </div>
-
           {/* search icon */}
-
           <div className="flex gap-2 mb-4">
             <div>
               <Search
@@ -50,7 +56,8 @@ const ProductList = ({ products }) => {
 
             <div className="sort">
               <select
-                defaultValue="Sort By"
+                value={sort}
+                onChange={(e) => setSort(e.target.value)}
                 className="select select-primary w-full max-w-xs"
               >
                 <option disabled>Sort By</option>
@@ -58,7 +65,7 @@ const ProductList = ({ products }) => {
                 <option value="lowest-price">Lowest Price</option>
                 <option value="highest-price">Highest Price</option>
                 <option value="a-z">A-Z</option>
-                <option value="z-a>">Z-A</option>
+                <option value="z-a">Z-A</option>
               </select>
             </div>
           </div>

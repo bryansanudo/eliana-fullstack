@@ -23,11 +23,13 @@ const Product = () => {
   return (
     <>
       <div className="pt-24  md:pt-0 md:grid md:grid-cols-5 h-screen md:mx-20 mx-6">
-        {/* {<div className="  cols-span-1">
-          {isLoading ? null : <ProductFilter />}
-        </div>} */}
+        {
+          <div className="mt-10  cols-span-1">
+            {isLoading ? null : <ProductFilter />}
+          </div>
+        }
 
-        <div className="col-span-5 md:pt-16 w-full  md:mx-6  ">
+        <div className="col-span-4 md:pt-16 w-full  md:mx-6  ">
           {isLoading ? (
             <img
               src={imageSpinner}
