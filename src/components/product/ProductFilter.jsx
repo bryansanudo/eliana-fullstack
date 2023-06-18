@@ -40,6 +40,11 @@ const ProductFilter = () => {
     dispatch(FILTER_BY_CATEGORY({ products, category: cat }));
   };
 
+  const clearFilters = () => {
+    setBrand("All");
+    setCategory("All");
+    setPrice(maxPrice);
+  };
   return (
     <>
       <h2 className="font-bold text-4xl py-8  text-transparent bg-clip-text  bg-gradient-to-r from-[#e67c04] to-[#5C24B3] w-min md:text-5xl capitalize">
@@ -86,7 +91,9 @@ const ProductFilter = () => {
             max={maxPrice}
           />
         </div>
-        <button className="btn btn-primary">Clear Filter</button>
+        <button className="btn btn-primary" onClick={clearFilters}>
+          Clear Filter
+        </button>
       </div>
     </>
   );
