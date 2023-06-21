@@ -47,10 +47,7 @@ const ProductFilter = () => {
   };
   return (
     <>
-      <h2 className="font-bold text-4xl py-8  text-transparent bg-clip-text  bg-gradient-to-r from-[#e67c04] to-[#5C24B3] w-min md:text-5xl capitalize">
-        Categorias
-      </h2>
-      <div className="flex flex-col items-start gap-2">
+      <div className="flex  items-start gap-2 pt-10">
         {allCategories.map((cat, index) => {
           return (
             <button
@@ -64,7 +61,7 @@ const ProductFilter = () => {
           );
         })}
       </div>
-      <h4>Brand</h4>
+      {/*   <h4>Brand</h4>
       <div>
         <select
           name="brand"
@@ -79,7 +76,7 @@ const ProductFilter = () => {
             );
           })}
         </select>
-        <h4>{`${price}`}</h4>
+         <h4>{`${price}`}</h4>
 
         <div>
           <input
@@ -94,7 +91,7 @@ const ProductFilter = () => {
         <button className="btn btn-primary" onClick={clearFilters}>
           Clear Filter
         </button>
-      </div>
+      </div> */}
     </>
   );
 };

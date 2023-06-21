@@ -107,7 +107,7 @@ const Slider = () => {
           </div>
 
           <div className=" flex flex-col mt-20 mx-10 gap-10  ">
-            <h2 className="text-4xl font-semibold ">
+            <h2 className="text-4xl font-semibold text-black ">
               {slides[currentIndex].title}
             </h2>
             <p className="text-xl font-medium">

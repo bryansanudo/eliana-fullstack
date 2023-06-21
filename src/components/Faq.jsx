@@ -47,7 +47,7 @@ const Faq = () => {
   ];
 
   return (
-    <div>
+    <div className="">
       <Section name="portafolio" title="Preguntas Frecuentes ">
         {/* subtitle={`
     Disfruta los mejores destilados hibridos de 1.2ML de contenido y concentrados al 98%. Las cepas varian según la disponibilidad.

@@ -2,30 +2,28 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        card: "0px 35px 120px -15px #211e35",
+      },
+      screens: {
+        xs: "450px",
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/src/assets/herobg.png')",
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
-        mytheme: {
+        night: {
+          ...require("daisyui/src/colors/themes")["[data-theme=night]"],
           primary: "#fecdc2",
-
-          secondary: "#e6e6e6",
-
-          accent: "#37CDBE",
-
-          neutral: "#3D4451",
-
-          "base-100": "#FFFFFF",
-
-          info: "#3ABFF8",
-
-          success: "#36D399",
-
-          warning: "#FBBD23",
-
-          error: "#F87272",
+          "primary-focus": "mediumblue",
+          secondary: "red",
+          "background-color": "#050816",
         },
       },
     ],

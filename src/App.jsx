@@ -16,24 +16,27 @@ const App = () => {
     <>
       <BrowserRouter>
         <ToastContainer position="bottom-center" />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/faq" element={<Faq />} />
 
-          <Route
-            path="/admin/*"
-            element={
-              <AdminOnlyRoute>
-                <Admin />
-              </AdminOnlyRoute>
-            }
-          />
-          <Route path="/product-details/:id" element={<ProductDetails />} />
-        </Routes>
+        <Header />
+
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center z-50">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/faq" element={<Faq />} />
+
+            <Route
+              path="/admin/*"
+              element={
+                <AdminOnlyRoute>
+                  <Admin />
+                </AdminOnlyRoute>
+              }
+            />
+            <Route path="/product-details/:id" element={<ProductDetails />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </>
   );
