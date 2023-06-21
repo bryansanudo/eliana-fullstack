@@ -38,9 +38,9 @@ const ProductDetails = () => {
             <div className="w-full text-left pl-12 md:pl-24 mb-6">
               <Link to="/#products">&larr; Back To Products</Link>
             </div>
-            <div className="flex md:flex-row flex-col gap-4 md:mx-20 mx-4  max-h-[500px]">
+            <div className="flex md:flex-row flex-col  gap-4 md:mx-20 mx-4 shadow-xl shadow-primary ">
               <img
-                className="w-[400px] h-[400px] object-contain shadow-md shadow-primary rounded-2xl"
+                className="object-contain md:h-[400px]  h-full rounded-t-lg "
                 src={product.imageURL}
                 alt=""
               />
@@ -50,22 +50,17 @@ const ProductDetails = () => {
                 <p className="text-left text-sm max-w-[800px]">
                   {product.desc}
                 </p>
-                <p>
-                  <b>SKU</b>
-                  {product.id}
-                </p>
-                <p>
-                  <b>Brand</b>
-                  {product.brand}
-                </p>
-                <div className="flex gap-4 items-center justify-center">
-                  <button className="btn">-</button>
-                  <p>
-                    <b>1</b>
-                  </p>
-                  <button className="btn">+</button>
+
+                <div className="flex flex-col items-center justify-center w-full">
+                  <div className="flex gap-4 items-center justify-center">
+                    <button className="btn">-</button>
+                    <p>
+                      <b>1</b>
+                    </p>
+                    <button className="btn">+</button>
+                  </div>
+                  <button className="btn btn-primary mt-4">ADD TO CART</button>
                 </div>
-                <button className="btn btn-primary mt-4">ADD TO CART</button>
               </div>
             </div>
           </Section>

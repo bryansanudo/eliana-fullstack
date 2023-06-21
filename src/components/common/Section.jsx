@@ -5,9 +5,9 @@ const Section = ({ title, subtitle, children, name }) => {
     <div>
       <section
         name={name}
-        className="min-h-fit flex flex-col justify-start items-center py-20 px-5 text-center"
+        className="min-h-fit flex flex-col justify-start items-center py-36 px-5 text-center"
       >
-        <p className="font-bold text-4xl py-8 text-center text-transparent bg-clip-text  bg-gradient-to-r from-[#e67c04] to-[#5C24B3]  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:text-5xl capitalize ">
+        <p className="font-bold text-4xl text-center text-transparent bg-clip-text  bg-gradient-to-r from-[#ffcdc2] to-[#6057ca] hover:from-[#6057ca] hover:to-[#ffcdc2] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:text-5xl">
           {title}
         </p>
         <p className="max-w-xl font-light text-gray-500 mb-10 text-sm md:text-base ">

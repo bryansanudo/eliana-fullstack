@@ -52,7 +52,7 @@ const Header = () => {
               <img
                 src="/logo.png"
                 alt=""
-                className="rounded-full object-cover hover:scale-105 transition-300  md:h-20 md:w-20 h-16 w-16  duration-300 shadow-lg   shadow-[#ffcdc2]"
+                className="rounded-full object-cover hover:scale-105 transition-300  md:h-20 md:w-20 h-16 w-16  duration-300 shadow-md   shadow-[#ffcdc2]"
               />
             </Link>
           </div>

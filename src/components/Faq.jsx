@@ -1,5 +1,8 @@
 import React from "react";
-import Section from "@/components/common/Section";
+
+import SectionWrapper from "@/hoc/SectionWrapper";
+import { fadeIn } from "@/utils/motion";
+import { motion } from "framer-motion";
 
 const Faq = () => {
   const questions = [
@@ -47,33 +50,29 @@ const Faq = () => {
   ];
 
   return (
-    <div className="">
-      <Section name="portafolio" title="Preguntas Frecuentes ">
-        {/* subtitle={`
-    Disfruta los mejores destilados hibridos de 1.2ML de contenido y concentrados al 98%. Las cepas varian según la disponibilidad.
-
-   `} */}
-        <div className="mx-auto flex h-full w-full max-w-screen-lg flex-col justify-center  ">
-          <div className="flex flex-col items-center justify-center max-w-[1000px]">
-            {questions.map((item) => (
-              <div
-                key={item.id}
-                tabIndex={0}
-                className="collapse collapse-arrow border border-[#ffcdc2] bg-base-100 rounded-box w-full"
-              >
-                <div className="collapse-title text-xl font-medium ">
-                  {item.question}
-                </div>
-                <div className="collapse-content text-left">
-                  <p>{item.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+    <div className="flex flex-col items-center justify-center mx-10 pt-20 ">
+      <p className="font-bold text-4xl text-center text-transparent bg-clip-text  bg-gradient-to-r from-[#ffcdc2] to-[#6057ca] hover:from-[#6057ca] hover:to-[#ffcdc2] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:text-5xl p-2">
+        Preguntas Frecuentes
+      </p>
+      <div className="flex flex-col items-center justify-center max-w-[1000px] mt-10">
+        {questions.map(({ id, question, answer }) => (
+          <motion.div
+            variants={fadeIn("up", "spring", id * 0.5, 0.75)}
+            key={id}
+            tabIndex={0}
+            className="collapse collapse-arrow border border-[#ffcdc2] bg-base-100 rounded-box w-full"
+          >
+            <div className="collapse-title text-xl font-medium ">
+              {question}
+            </div>
+            <div className="collapse-content text-left">
+              <p>{answer}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Faq;
+export default SectionWrapper(Faq, "faq");

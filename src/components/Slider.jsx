@@ -2,6 +2,9 @@ import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import SectionWrapper from "@/hoc/SectionWrapper";
+import { zoomIn } from "@/utils/motion";
+import { motion } from "framer-motion";
 const Slider = () => {
   /*  const slides = [
     {
@@ -92,7 +95,10 @@ const Slider = () => {
   };
 
   return (
-    <>
+    <motion.div variants={zoomIn(0.1, 1.5)}>
+      <p className="font-bold text-4xl text-center text-transparent bg-clip-text  bg-gradient-to-r from-[#ffcdc2] to-[#6057ca] hover:from-[#6057ca] hover:to-[#ffcdc2] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:text-5xl">
+        Siempre parchados con Need Weed
+      </p>
       <div className="relative max-w-[1000px] flex items-center justify-center w-full mt-6 flex-col md:flex-row ">
         <div className=" h-[470px] md:w-1/2 bg-[#ffcdc2] shadow-xl shadow-gray-600 w-full rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl">
           <div className="flex mx-auto w-full md:bottom-0 justify-center py-2  absolute z-50 ">
@@ -110,11 +116,11 @@ const Slider = () => {
             <h2 className="text-4xl font-semibold text-black ">
               {slides[currentIndex].title}
             </h2>
-            <p className="text-xl font-medium">
+            <p className="text-xl font-medium text-black">
               {slides[currentIndex].description}
             </p>
 
-            <Link
+            {/* <Link
               to={slides[currentIndex].link}
               className={slides[currentIndex].className}
               onClick={scroll}
@@ -122,7 +128,7 @@ const Slider = () => {
               <button className="hover:bg-[#6057ca] py-2 px-10 text-lg font-medium border-2 border-black rounded-full hover:scale-105 duration-700 ">
                 {slides[currentIndex].btn}
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className=" h-[470px] w-full md:w-1/2 m-auto   relative group    ">
@@ -149,8 +155,8 @@ const Slider = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 
-export default Slider;
+export default SectionWrapper(Slider, "slider");

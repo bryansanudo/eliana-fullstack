@@ -1,43 +1,41 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import SectionWrapper from "@/hoc/SectionWrapper";
+import { textVariant } from "@/utils/motion";
+import { motion } from "framer-motion";
 
 const Reset = ({ setReset }) => {
   return (
     <>
-      <section className="flex flex-col w-full gap-8 lg:flex-row pt-28 md:px-20 px-4">
-        <div className="flex items-center justify-center lg:w-1/2 ">
-          <img src="/forgot.png" className="w-[300px] lg:w-[600px] " />
-        </div>
+      <motion.div
+        variants={textVariant()}
+        className="flex flex-col items-center justify-center mx-auto"
+      >
+        <h2 className="text-center text-white font-semibold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          Cambiar contraseña
+        </h2>
+        <form className="mt-10 flex flex-col gap-6 w-[300px] lg:w-[500px] items-center shadow-lg shadow-gray-500 rounded-xl p-8 ">
+          <input
+            type="text"
+            placeholder="Email"
+            className="input  input-primary  w-full"
+          />
 
-        <div className="divider lg:divider-horizontal" />
+          <button className="btn btn-secondary capitalize  w-full">
+            Enviar Correo
+          </button>
 
-        <div className="flex items-center justify-center lg:w-1/2">
-          <form className="flex flex-col gap-6 w-[300px] lg:w-[500px] items-center shadow-lg shadow-gray-500 rounded-xl p-8 ">
-            <h1 className="w-full text-center font-bold text-2xl">
-              Cambiar Contraseña
-            </h1>
-            <input
-              type="text"
-              placeholder="Email"
-              className="input  input-primary  w-full"
-            />
-
-            <button className="btn btn-secondary capitalize  w-full">
-              Enviar Correo
-            </button>
-
-            <Link
-              onClick={() => setReset(false)}
-              className="link link-primary w-full "
-            >
-              Login
-            </Link>
-          </form>
-        </div>
-      </section>
+          <Link
+            onClick={() => setReset(false)}
+            className="link link-primary w-full "
+          >
+            Login
+          </Link>
+        </form>
+      </motion.div>
     </>
   );
 };
 
-export default Reset;
+export default SectionWrapper(Reset, "reset");
