@@ -19,7 +19,6 @@ const ProductFilter = () => {
   const dispatch = useDispatch();
 
   const allCategories = [
-    "All",
     ...new Set(products.map((product) => product.category)),
   ];
   const allBrands = [
@@ -47,7 +46,7 @@ const ProductFilter = () => {
   };
   return (
     <>
-      <div className="flex  items-start gap-2 pt-10">
+      <div className="flex justify-center items-center gap-10 md:justify-between pb-16 ">
         {allCategories.map((cat, index) => {
           return (
             <button
@@ -56,7 +55,42 @@ const ProductFilter = () => {
               className={`${category}` === cat ? "" : null}
               onClick={() => filterProducts(cat)}
             >
-              {cat}
+              {/* {cat === "All" && (
+                <>
+                  <img
+                    src="/logo.png"
+                    alt=""
+                    className="w-20 h-20 object-contain"
+                  />
+                </>
+              )} */}
+              {cat === "Zaza" && (
+                <>
+                  <img
+                    src="/zazaIcon.png"
+                    className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-125 duration-700"
+                    alt=""
+                  />
+                </>
+              )}
+              {cat === "Destilados" && (
+                <>
+                  <img
+                    src="/destilados.png"
+                    className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-125 duration-700"
+                    alt=""
+                  />
+                </>
+              )}
+              {cat === "Baterias" && (
+                <>
+                  <img
+                    src="/baterias.png"
+                    alt=""
+                    className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-125 duration-700"
+                  />
+                </>
+              )}
             </button>
           );
         })}

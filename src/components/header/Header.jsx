@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-[#0b0c1c] w-full text-white overflow-hidden fixed z-40">
+      <header className="bg-[#050816] w-full text-white overflow-hidden fixed z-40">
         <div className="w-full h-24 max-w-[1200px] mx-auto p-4 flex justify-between items-center ">
           <div className="text-white w-[20%] text-lg">
             <Link to="/">

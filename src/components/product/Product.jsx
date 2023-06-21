@@ -31,7 +31,7 @@ const Product = () => {
       <div className="pt-24  h-screen ">
         {<div className="mt-10  ">{isLoading ? null : <ProductFilter />}</div>}
 
-        <div className="  w-full  md:mx-6  ">
+        <div className="flex flex-col items-center justify-center  ">
           {isLoading ? (
             <img
               src={imageSpinner}
