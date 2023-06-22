@@ -60,14 +60,14 @@ const filterSlice = createSlice({
     },
     FILTER_BY_BRAND(state, action) {
       const { products, brand } = action.payload;
-      console.log(products, brand);
+      /* console.log(products, brand); */
       let tempProducts = [];
       if (brand === "All") {
         tempProducts = products;
       } else {
         tempProducts = products.filter((product) => product.brand === brand);
       }
-      console.log("temp", tempProducts);
+      /* console.log("temp", tempProducts); */
       state.filteredProducts = tempProducts;
     },
     FILTER_BY_PRICE(state, action) {

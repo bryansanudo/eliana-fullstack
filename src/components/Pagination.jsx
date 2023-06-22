@@ -82,8 +82,8 @@ const Pagination = ({
         </li>
       </div>
       <p>
-        <b className="text-primary">{`page ${currentPage}`}</b>
-        <span>{` of `}</span>
+        <b className="text-primary">{`Pagina ${currentPage}`}</b>
+        <span>{` de `}</span>
         <b>{`${Math.ceil(totalPages)}`}</b>
       </p>
     </ul>

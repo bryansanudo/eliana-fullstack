@@ -62,10 +62,10 @@ const ProductList = ({ products }) => {
               onChange={(e) => setSort(e.target.value)}
               className="select select-primary w-full max-w-xs"
             >
-              <option disabled>Sort By</option>
-              <option value="latest">Latest</option>
-              <option value="lowest-price">Lowest Price</option>
-              <option value="highest-price">Highest Price</option>
+              <option disabled>Organizar por</option>
+              <option value="latest">Ultimo</option>
+              <option value="lowest-price">Precio mas bajo</option>
+              <option value="highest-price">Precio mas alto</option>
               <option value="a-z">A-Z</option>
               <option value="z-a">Z-A</option>
             </select>

@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import HeaderDesktop from "@/components/header/HeaderDesktop";
 import HeaderMobile from "@/components/header/HeaderMobile";
 
+import { toast } from "react-toastify";
+
 import { useDispatch } from "react-redux";
 import { SET_ACTIVE_USER, REMOVE_ACTIVE_USER } from "@/redux/slice/authSlice";
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/configFirebase";
 
 const activeLink = ({ isActive }) =>
@@ -17,6 +19,16 @@ const activeLink = ({ isActive }) =>
 const Header = () => {
   const [displayName, setDisplayName] = useState("");
   const dispatch = useDispatch();
+
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Cierre de sesion exitoso");
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -60,8 +72,16 @@ const Header = () => {
           <nav className="w-[80%] text-lg ">
             {/* desktop */}
 
-            <HeaderDesktop activeLink={activeLink} displayName={displayName} />
-            <HeaderMobile activeLink={activeLink} displayName={displayName} />
+            <HeaderDesktop
+              activeLink={activeLink}
+              displayName={displayName}
+              logout={logout}
+            />
+            <HeaderMobile
+              activeLink={activeLink}
+              displayName={displayName}
+              logout={logout}
+            />
 
             {/* mobile */}
           </nav>

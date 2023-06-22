@@ -1,32 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
+
+import { AiFillFileAdd } from "react-icons/ai";
+import { BsReverseListColumnsReverse } from "react-icons/bs";
+import { MdChecklist } from "react-icons/md";
 
 const Navbar = () => {
   return (
     <>
-      <ul className="menu bg-gray-300 h-full  ">
-        <li>
-          <Link to="home">
-            <FaFacebook className="text-4xl text-primary" />
-            Inicio
-          </Link>
-        </li>
+      <ul className="menu bg-black h-full  ">
         <li>
           <Link to="all-products">
-            <FaFacebook className="text-4xl text-primary" />
+            <BsReverseListColumnsReverse className="text-4xl text-primary" />
             Productos
           </Link>
         </li>
         <li>
           <Link to="/admin/add-product/ADD">
-            <FaFacebook className="text-4xl text-primary" />
+            <AiFillFileAdd className="text-4xl text-primary" />
             Agregar
           </Link>
         </li>
         <li>
           <Link to="orders">
-            <FaFacebook className="text-4xl text-primary" />
+            <MdChecklist className="text-4xl text-primary" />
             Pedidos
           </Link>
         </li>

@@ -5,7 +5,7 @@ import useFetchCollection from "@/customHooks/useFetchCollection";
 import { useDispatch, useSelector } from "react-redux";
 import { STORE_PRODUCTS, selectProducts } from "@/redux/slice/productSlice";
 import Footer from "@/components/Footer";
-import imageSpinner from "@/assets/spinner.jpg";
+import imageSpinner from "@/assets/loader.gif";
 import { GET_PRICE_RANGE } from "@/redux/slice/productSlice";
 
 const Product = () => {

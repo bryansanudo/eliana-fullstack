@@ -1,30 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import { TbDoorExit } from "react-icons/tb";
 import { FaCartPlus } from "react-icons/fa";
-import { signOut } from "firebase/auth";
-import { auth } from "@/configFirebase";
-import { toast } from "react-toastify";
+
 import { ShowOnLogin, ShowOnLogout } from "@/components/HiddenLink";
 import AdminOnlyRoute from "@/components/AdminOnlyRoute";
 import { AdminOnlyLink } from "@/components/AdminOnlyRoute";
 
-const HeaderDesktop = ({ activeLink, displayName }) => {
-  const logout = () => {
-    signOut(auth)
-      .then(() => {
-        toast.success("Logout Successfully.");
-      })
-      .catch((error) => {
-        toast(error.message);
-      });
-  };
+const HeaderDesktop = ({ logout, activeLink, displayName }) => {
   return (
     <>
       <div className="hidden md:flex justify-between mx- gap-8">
         <ul className="flex gap-6  items-center justify-center">
           <AdminOnlyLink>
             <li>
-              <Link to="admin/home">Admin</Link>
+              <Link to="admin/all-products">Admin</Link>
             </li>
           </AdminOnlyLink>
 

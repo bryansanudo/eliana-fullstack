@@ -154,7 +154,7 @@ const AddProduct = () => {
       <Section title={detectForm(id, "Agregar Producto", "Editar Producto")}>
         <form
           onSubmit={detectForm(id, addProduct, editProduct)}
-          className="shadow-md shadow-black rounded-xl p-6 w-full max-w-[800px] flex flex-col gap-4 items-center justify-center"
+          className="shadow-lg shadow-secondary rounded-xl p-6 w-full max-w-[800px] flex flex-col gap-4 items-center justify-center"
         >
           <label className="w-full text-left">Nombre Del Producto</label>
           <input

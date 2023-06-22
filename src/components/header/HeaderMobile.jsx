@@ -46,7 +46,7 @@ const HeaderMobile = ({ logout, activeLink, displayName }) => {
           </li>
           <AdminOnlyLink>
             <li>
-              <Link to="admin/home">Admin</Link>
+              <Link to="admin/all-products">Admin</Link>
             </li>
           </AdminOnlyLink>
 

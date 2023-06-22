@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/configFirebase";
-import spinnerImg from "@/assets/spinner.jpg";
+import spinnerImg from "@/assets/loader.gif";
 import Section from "@/components/common/section";
 import IconWpp from "@/icons/IconWpp";
 const ProductDetails = () => {
@@ -37,7 +37,7 @@ const ProductDetails = () => {
         <>
           <Section title={product.name}>
             <div className="w-full text-left pl-12 md:pl-24 mb-6">
-              <Link to="/#products">&larr; Back To Products</Link>
+              <Link to="/#products">&larr; Volver</Link>
             </div>
             <div className="flex md:flex-row flex-col  gap-4 md:mx-20 mx-4 shadow-xl shadow-primary rounded-lg ">
               <img
