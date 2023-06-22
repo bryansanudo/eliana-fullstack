@@ -29,7 +29,7 @@ const ProductItem = ({ product, id, name, price, desc, imageURL }) => {
           <div className="flex flex-col items-center justify-center">
             <div className="flex flex-col items-center">
               <p className="text-primary text-lg font-bold">{`$${price}`}</p>
-              <h2 className="text-2xl md:text-lg">{shortenText(name, 20)}</h2>
+              <h2 className="text-lg">{shortenText(name, 20)}</h2>
             </div>
 
             <button className="btn btn-primary btn-sm mt-4">Add To Cart</button>
