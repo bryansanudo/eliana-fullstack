@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa";
 
 import { MdClose } from "react-icons/md";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { TbDoorExit } from "react-icons/tb";
 import { RiUserStarFill } from "react-icons/ri";
+import { ShowOnLogin, ShowOnLogout } from "@/components/HiddenLink";
+import AdminOnlyRoute from "@/components/AdminOnlyRoute";
+import { AdminOnlyLink } from "@/components/AdminOnlyRoute";
 
-const HeaderMobile = ({ logout, activeLink }) => {
+const HeaderMobile = ({ logout, activeLink, displayName }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const mostarMenu = () => {
@@ -28,7 +32,7 @@ const HeaderMobile = ({ logout, activeLink }) => {
         onClick={mostarMenu}
         className={
           showMenu
-            ? "z-40 flex flex-col p-3 fixed inset-0 right-1/3 bg-black/40 backdrop-blur-xl gap-20 "
+            ? "z-50 flex flex-col p-3 fixed inset-0 right-1/3 bg-black/40 backdrop-blur-xl gap-20 "
             : "hidden"
         }
       >
@@ -40,49 +44,57 @@ const HeaderMobile = ({ logout, activeLink }) => {
               </h2>
             </Link>
           </li>
-          <li className="hover:text-primary  duration-400">
+          <AdminOnlyLink>
+            <li>
+              <Link to="admin/home">Admin</Link>
+            </li>
+          </AdminOnlyLink>
+
+          <li className="hover:text-primary hover:scale-105 duration-400">
             <NavLink className={activeLink} to="/">
               Inicio
             </NavLink>
           </li>
-          <li className="hover:text-primary  duration-400">
-            <NavLink className={activeLink} to="/contact">
-              Contacto
-            </NavLink>
-          </li>
-          <li className="hover:text-primary  duration-400">
-            <NavLink className={activeLink} to="/spents">
-              Mis Gastos
+          <li className="hover:text-primary hover:scale-105 duration-400">
+            <NavLink className={activeLink} to="/faq">
+              FAQ
             </NavLink>
           </li>
         </ul>
         <ul className="flex flex-col gap-4  justify-center ">
-          <li className="hover:text-primary  duration-400">
-            <NavLink className={activeLink} to="/login">
-              Iniciar Sesion
-            </NavLink>
-          </li>
-          <li className="hover:text-primary  duration-400">
-            <NavLink className={activeLink} to="/register">
-              Registrate
-            </NavLink>
-          </li>
-          <li className="hover:text-primary  duration-400">
-            <NavLink to="/user-profile">
-              <div className="flex items-center gap-1">
-                slkdfj
-                <RiUserStarFill className="text-3xl" />
+          <ShowOnLogout>
+            <li className="hover:text-primary hover:scale-105 duration-400">
+              <NavLink className={activeLink} to="/login">
+                Iniciar Sesion
+              </NavLink>
+            </li>
+          </ShowOnLogout>
+          <ShowOnLogout>
+            <li className="hover:text-primary hover:scale-105 duration-400">
+              <NavLink className={activeLink} to="/register">
+                Registrate
+              </NavLink>
+            </li>
+          </ShowOnLogout>
+
+          <ShowOnLogin>
+            <li className="hover:text-primary hover:scale-105 duration-400">
+              <div className="flex items-center justify-center gap-1">
+                Hola,{displayName}
+                <FaCartPlus className="text-3xl" />
               </div>
-            </NavLink>
-          </li>
-          <li className="hover:text-primary  duration-400">
-            <NavLink>
-              <div className="flex items-center gap-1">
-                Salir
-                <TbDoorExit className="text-3xl" />
-              </div>
-            </NavLink>
-          </li>
+            </li>
+          </ShowOnLogin>
+          <ShowOnLogin>
+            <li className="hover:text-primary hover:scale-105 duration-400">
+              <NavLink onClick={logout}>
+                <div className="flex items-center justify-center gap-1">
+                  Salir
+                  <TbDoorExit className="text-3xl" />
+                </div>
+              </NavLink>
+            </li>
+          </ShowOnLogin>
         </ul>
       </div>
     </>

@@ -4,6 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/configFirebase";
 import spinnerImg from "@/assets/spinner.jpg";
 import Section from "@/components/common/section";
+import IconWpp from "@/icons/IconWpp";
 const ProductDetails = () => {
   const { id } = useParams();
 
@@ -51,7 +52,7 @@ const ProductDetails = () => {
                   {product.desc}
                 </p>
 
-                <div className="flex flex-col items-center justify-center w-full">
+                {/* <div className="flex flex-col items-center justify-center w-full">
                   <div className="flex gap-4 items-center justify-center">
                     <button className="btn">-</button>
                     <p>
@@ -60,7 +61,16 @@ const ProductDetails = () => {
                     <button className="btn">+</button>
                   </div>
                   <button className="btn btn-primary mt-4">ADD TO CART</button>
-                </div>
+                </div> */}
+                <article className=" hover:scale-125 duration-300 my-4 mx-auto">
+                  <a
+                    href="https://wa.me/c/573127965835"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <IconWpp />
+                  </a>
+                </article>
               </div>
             </div>
           </Section>

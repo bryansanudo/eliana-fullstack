@@ -101,7 +101,7 @@ const Slider = () => {
       </p>
       <div className="relative max-w-[1000px] flex items-center justify-center w-full mt-6 flex-col md:flex-row ">
         <div className=" h-[470px] md:w-1/2 bg-[#ffcdc2] shadow-xl shadow-gray-600 w-full rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl">
-          <div className="flex mx-auto w-full md:bottom-0 justify-center py-2  absolute z-50 ">
+          <div className="flex mx-auto w-full md:bottom-0 justify-center py-2  absolute z-30 ">
             {slides.map((slide, slideIndex) => (
               <div key={slideIndex}>
                 <RxDotFilled

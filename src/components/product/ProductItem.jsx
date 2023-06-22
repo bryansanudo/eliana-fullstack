@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Tilt } from "react-tilt";
+import IconWpp from "@/icons/IconWpp";
 const ProductItem = ({ product, id, name, price, desc, imageURL }) => {
   const shortenText = (text, n) => {
     if (text.length > n) {
@@ -31,8 +32,17 @@ const ProductItem = ({ product, id, name, price, desc, imageURL }) => {
               <p className="text-primary text-lg font-bold">{`$${price}`}</p>
               <h2 className="text-lg">{shortenText(name, 20)}</h2>
             </div>
+            <article className=" hover:scale-125 duration-300 my-4">
+              <a
+                href="https://wa.me/c/573127965835"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <IconWpp />
+              </a>
+            </article>
 
-            <button className="btn btn-primary btn-sm mt-4">Add To Cart</button>
+            {/* <button className="btn btn-primary btn-sm mt-4">Add To Cart</button> */}
           </div>
         </div>
       </div>

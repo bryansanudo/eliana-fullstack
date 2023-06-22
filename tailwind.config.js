@@ -21,8 +21,8 @@ export default {
         night: {
           ...require("daisyui/src/colors/themes")["[data-theme=night]"],
           primary: "#fecdc2",
-          "primary-focus": "mediumblue",
-          secondary: "red",
+          /* "primary-focus": "mediumblue", */
+          secondary: "#3e2b74",
           "background-color": "#050816",
         },
       },

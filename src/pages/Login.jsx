@@ -73,7 +73,7 @@ const Login = () => {
           variants={textVariant()}
           className="flex flex-col items-center justify-center mx-auto"
         >
-          <h2 className="text-white font-semibold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h2 className="font-bold text-4xl text-center text-transparent bg-clip-text  bg-gradient-to-r from-[#ffcdc2] to-[#6057ca] hover:from-[#6057ca] hover:to-[#ffcdc2] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:text-5xl">
             Iniciar Sesion
           </h2>
           <form

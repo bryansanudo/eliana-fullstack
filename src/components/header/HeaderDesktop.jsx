@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { TbDoorExit } from "react-icons/tb";
-import { RiUserStarFill } from "react-icons/ri";
+import { FaCartPlus } from "react-icons/fa";
 import { signOut } from "firebase/auth";
 import { auth } from "@/configFirebase";
 import { toast } from "react-toastify";
@@ -38,11 +38,11 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
               FAQ
             </NavLink>
           </li>
-          <li className="hover:text-primary hover:scale-105 duration-400">
+          {/* <li className="hover:text-primary hover:scale-105 duration-400">
             <NavLink className={activeLink} to="/gallery">
               Galeria
             </NavLink>
-          </li>
+          </li> */}
         </ul>
         <ul className="flex gap-6 items-center justify-center">
           <ShowOnLogout>
@@ -62,12 +62,10 @@ const HeaderDesktop = ({ activeLink, displayName }) => {
 
           <ShowOnLogin>
             <li className="hover:text-primary hover:scale-105 duration-400">
-              <NavLink className={activeLink} to="/user-profile">
-                <div className="flex items-center justify-center gap-1">
-                  Hola,{displayName}
-                  <RiUserStarFill className="text-3xl" />
-                </div>
-              </NavLink>
+              <div className="flex items-center justify-center gap-1">
+                Hola,{displayName}
+                <FaCartPlus className="text-3xl" />
+              </div>
             </li>
           </ShowOnLogin>
           <ShowOnLogin>
